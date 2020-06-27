@@ -2,12 +2,14 @@ class Hurdler{
     constructor(x,y,width,height){
         this.x=x;
         this.y=y;
-        this.width=width;
-        this.height=height;
+        this.width=10;
+        this.height=20;
     }
 
     displayHurdler(){
-        this.sprite = createSprite(this.x,this.y,this.width,height);
+        this.sprite = createSprite(this.x,this.y,this.width,this.height);
+        this.sprite.speedX=3;
+        this.sprite.speedY=0.02;
         form.hide();
     }
 
@@ -15,5 +17,5 @@ class Hurdler{
         database.ref('/').update({
           gameState: state
         });
-      }
+    }
 }

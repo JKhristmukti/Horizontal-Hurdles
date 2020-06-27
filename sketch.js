@@ -10,7 +10,7 @@ var hurdles = [];
 
 var hurdlers = [];
 
-var hurdler1,hurdle1,form,b1,b2,b3;
+var hurdler1,hurdler2,hurdle1,hurdle2,hurdle3,hurdle4,form,b1,b2,b3;
 
 var gameState = 0;
 
@@ -24,8 +24,17 @@ function setup(){
         gameState = data.val();
     });
 
-    hurdler1 = new Hurdler(displayWidth/50,400,7,18);
+    hurdler1 = new Hurdler(50,115,7,18);
     hurdlers.push(hurdler1);
+
+    hurdler2 = new Hurdler(50,240,7,18);
+    hurdlers.push(hurdler2);
+
+    hurdler3 = new Hurdler(50,365,7,18);
+    hurdlers.push(hurdler3);
+
+    hurdler4 = new Hurdler(50,490,7,18);
+    hurdlers.push(hurdler4);
 
     hurdle = new Hurdle();
     hurdles.push(hurdle);
@@ -43,6 +52,12 @@ function setup(){
 
     hurdle1 = new Hurdle(495);
 
+    hurdle2 = new Hurdle(370);
+
+    hurdle3 = new Hurdle(245);
+
+    hurdle4 = new Hurdle(120);
+
     Engine.run(engine);
 }
 
@@ -50,6 +65,9 @@ function draw(){
     background("white");
     if(keyCode ===32){
         hurdler1.displayHurdler();
+        hurdler2.displayHurdler();
+        hurdler3.displayHurdler();
+        hurdler4.displayHurdler();
         b1.separatePlayers();
         b2.separatePlayers();
         b3.separatePlayers();
