@@ -1,5 +1,5 @@
 class Hurdler{
-    constructor(x,y,width,height){
+    constructor(x,y){
         this.x=x;
         this.y=y;
         this.width=10;
@@ -8,8 +8,7 @@ class Hurdler{
 
     displayHurdler(){
         this.sprite = createSprite(this.x,this.y,this.width,this.height);
-        this.sprite.speedX=3;
-        this.sprite.speedY=0.02;
+        this.sprite.velocity.x=2;
         form.hide();
     }
 
@@ -17,5 +16,14 @@ class Hurdler{
         database.ref('/').update({
           gameState: state
         });
+    }
+
+    gravity(){
+        if(this.sprite.y >= this.y){
+            this.sprite.velocity.y=0;
+        }
+        else{
+            this.sprite.velocity.y=0.08;
+        }
     }
 }

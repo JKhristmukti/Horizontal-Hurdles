@@ -4,7 +4,9 @@ class Form {
     this.input = createInput("Name");
     this.button = createButton('Play');
     this.greeting = createElement('h2');
+    this.reset = createButton('Reset');
   }
+
   hide(){
     this.greeting.hide();
     this.button.hide();
@@ -27,5 +29,8 @@ class Form {
       this.greeting.position(displayWidth/2 - 70, displayHeight/4);
     });
 
+    this.reset.mousePressed(()=>{
+        player.updateCount(0);
+    })
   }
 }
